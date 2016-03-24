@@ -26,3 +26,13 @@
 *.exe
 *.out
 *.app
+
+# Eclipse
+.project
+.cproject
+.pydevproject
+
+# SCons
+.sconsign.dblite
+build/
+

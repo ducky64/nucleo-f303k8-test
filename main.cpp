@@ -7,6 +7,11 @@
 
 #include "mbed.h"
 
+#include "cmsis.h"
+#include "pinmap.h"
+#include "serial_api.h"
+#include "PeripheralPins.h"
+
 PwmOut led0(D9);
 DigitalOut led1(D10);
 
@@ -20,11 +25,14 @@ void flip() {
 int main() {
   int step = 0;
 
-  led2 = 1;
-  led2 = 0;
+  wait(0.01);
+
+//  serial_t obj;
+//  serial_init(&obj, SERIAL_TX, SERIAL_RX);
+//  serial_baud(&obj, 115200);
+
 
   Serial uart(SERIAL_TX, SERIAL_RX);
-
   uart.baud(115200);
 
   sw2.rise(&flip);
@@ -39,6 +47,7 @@ int main() {
 
     wait(0.01);
 
+//    serial_putc(&obj, 'x');
     uart.putc('x');
   }
   return 0;

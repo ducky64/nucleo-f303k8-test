@@ -12,13 +12,14 @@ env.Append(LINKFLAGS=[
   '-Wl,--no-whole-archive',
 ])
 
-env.Append(CPPPATH=[Dir('MODSERIAL/'),
-                    Dir('MODSERIAL/Device/')])
-env.Prepend(LIBS =
-  env.StaticLibrary(
-    target='MODSERIAL',
-    source=Glob('MODSERIAL/*.cpp') + Glob('MODSERIAL/Device/*.cpp'))
-)
+# Needs F303K8 target
+# env.Append(CPPPATH=[Dir('MODSERIAL/'),
+#                     Dir('MODSERIAL/Device/')])
+# env.Prepend(LIBS =
+#   env.StaticLibrary(
+#     target='MODSERIAL',
+#     source=Glob('MODSERIAL/*.cpp') + Glob('MODSERIAL/Device/*.cpp'))
+# )
 
 # env.Prepend(LIBS =
 #   env.MbedLikeLibrary(
